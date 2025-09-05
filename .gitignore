@@ -9,9 +9,8 @@ __pycache__/
 # version file
 alphapose/version.py
 
-# input output folder 
+# input folder 
 inference_input/
-alphapose_output/
 
 # Distribution / packaging
 .Python
