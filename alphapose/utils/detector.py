@@ -30,6 +30,12 @@ class DetectionLoader():
             self.datalen = int(stream.get(cv2.CAP_PROP_FRAME_COUNT))
             self.fourcc = int(stream.get(cv2.CAP_PROP_FOURCC))
             self.fps = stream.get(cv2.CAP_PROP_FPS)
+            if hasattr(self.opt, 'fps') and self.opt.fps is not None and self.opt.fps > 0:
+                self.frame_skip = round(self.fps / self.opt.fps)
+                self.datalen = self.datalen // self.frame_skip
+                self.fps = self.opt.fps
+            else:
+                self.frame_skip = 1
             self.frameSize = (int(stream.get(cv2.CAP_PROP_FRAME_WIDTH)), int(stream.get(cv2.CAP_PROP_FRAME_HEIGHT)))
             self.videoinfo = {'fourcc': self.fourcc, 'fps': self.fps, 'frameSize': self.frameSize}
             stream.release()

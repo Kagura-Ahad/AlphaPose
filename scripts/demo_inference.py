@@ -83,7 +83,8 @@ parser.add_argument('--pose_flow', dest='pose_flow',
                     help='track humans in video with PoseFlow', action='store_true', default=False)
 parser.add_argument('--pose_track', dest='pose_track',
                     help='track humans in video with reid', action='store_true', default=False)
-
+parser.add_argument('--fps', type=int, default=None,
+                    help='frame rate for video processing')
 args = parser.parse_args()
 cfg = update_config(args.cfg)
 
