@@ -1,0 +1,485 @@
+(base) cloudtenants@cloudtenants-Z790-EAGLE:~$ cd ~
+(base) cloudtenants@cloudtenants-Z790-EAGLE:~$ wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+--2025-09-04 14:25:16--  https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+Resolving developer.download.nvidia.com (developer.download.nvidia.com)... 23.212.252.59, 23.212.252.65
+Connecting to developer.download.nvidia.com (developer.download.nvidia.com)|23.212.252.59|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3524358811 (3.3G) [application/octet-stream]
+Saving to: ‘cuda_11.7.1_515.65.01_linux.run’
+
+cuda_11.7.1_515.65.01_linux.run               100%[=================================================================================================>]   3.28G  1.64MB/s    in 14m 56s 
+
+2025-09-04 14:40:16 (3.75 MB/s) - ‘cuda_11.7.1_515.65.01_linux.run’ saved [3524358811/3524358811]
+
+(base) cloudtenants@cloudtenants-Z790-EAGLE:~$ sudo sh cuda_11.7.1_515.65.01_linux.run --silent --toolkit --override
+[sudo] password for cloudtenants: 
+(base) cloudtenants@cloudtenants-Z790-EAGLE:~$ conda create -n alphapose python=3.7 -y
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.12.0
+  latest version: 25.7.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/cloudtenants/miniconda/envs/alphapose
+
+  added / updated specs:
+    - python=3.7
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _openmp_mutex-5.1          |            1_gnu          21 KB
+    ca-certificates-2025.7.15  |       h06a4308_0         126 KB
+    certifi-2022.12.7          |   py37h06a4308_0         150 KB
+    ld_impl_linux-64-2.40      |       h12ee557_0         710 KB
+    libffi-3.4.4               |       h6a678d5_1         141 KB
+    libgcc-ng-11.2.0           |       h1234567_1         5.3 MB
+    libgomp-11.2.0             |       h1234567_1         474 KB
+    libstdcxx-ng-11.2.0        |       h1234567_1         4.7 MB
+    libxcb-1.17.0              |       h9b100fa_0         430 KB
+    ncurses-6.5                |       h7934f7d_0         1.1 MB
+    openssl-1.1.1w             |       h7f8727e_0         3.7 MB
+    pip-22.3.1                 |   py37h06a4308_0         2.7 MB
+    pthread-stubs-0.3          |       h0ce48e5_1           5 KB
+    python-3.7.16              |       h7a1cb2a_0        44.8 MB
+    readline-8.3               |       hc2a1206_0         471 KB
+    setuptools-65.6.3          |   py37h06a4308_0         1.1 MB
+    sqlite-3.50.2              |       hb25bd0a_1         1.1 MB
+    tk-8.6.15                  |       h54e0aa7_0         3.4 MB
+    wheel-0.38.4               |   py37h06a4308_0          63 KB
+    xorg-libx11-1.8.12         |       h9b100fa_1         895 KB
+    xorg-libxau-1.0.12         |       h9b100fa_0          13 KB
+    xorg-libxdmcp-1.1.5        |       h9b100fa_0          19 KB
+    xorg-xorgproto-2024.1      |       h5eee18b_1         580 KB
+    xz-5.6.4                   |       h5eee18b_1         567 KB
+    zlib-1.2.13                |       h5eee18b_1         111 KB
+    ------------------------------------------------------------
+                                           Total:        72.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2025.7.15-h06a4308_0
+  certifi            pkgs/main/linux-64::certifi-2022.12.7-py37h06a4308_0
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.40-h12ee557_0
+  libffi             pkgs/main/linux-64::libffi-3.4.4-h6a678d5_1
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1
+  libgomp            pkgs/main/linux-64::libgomp-11.2.0-h1234567_1
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1
+  libxcb             pkgs/main/linux-64::libxcb-1.17.0-h9b100fa_0
+  ncurses            pkgs/main/linux-64::ncurses-6.5-h7934f7d_0
+  openssl            pkgs/main/linux-64::openssl-1.1.1w-h7f8727e_0
+  pip                pkgs/main/linux-64::pip-22.3.1-py37h06a4308_0
+  pthread-stubs      pkgs/main/linux-64::pthread-stubs-0.3-h0ce48e5_1
+  python             pkgs/main/linux-64::python-3.7.16-h7a1cb2a_0
+  readline           pkgs/main/linux-64::readline-8.3-hc2a1206_0
+  setuptools         pkgs/main/linux-64::setuptools-65.6.3-py37h06a4308_0
+  sqlite             pkgs/main/linux-64::sqlite-3.50.2-hb25bd0a_1
+  tk                 pkgs/main/linux-64::tk-8.6.15-h54e0aa7_0
+  wheel              pkgs/main/linux-64::wheel-0.38.4-py37h06a4308_0
+  xorg-libx11        pkgs/main/linux-64::xorg-libx11-1.8.12-h9b100fa_1
+  xorg-libxau        pkgs/main/linux-64::xorg-libxau-1.0.12-h9b100fa_0
+  xorg-libxdmcp      pkgs/main/linux-64::xorg-libxdmcp-1.1.5-h9b100fa_0
+  xorg-xorgproto     pkgs/main/linux-64::xorg-xorgproto-2024.1-h5eee18b_1
+  xz                 pkgs/main/linux-64::xz-5.6.4-h5eee18b_1
+  zlib               pkgs/main/linux-64::zlib-1.2.13-h5eee18b_1
+
+
+
+Downloading and Extracting Packages
+setuptools-65.6.3    | 1.1 MB    | ############################################################################################################################################# | 100% 
+sqlite-3.50.2        | 1.1 MB    | ############################################################################################################################################# | 100% 
+ld_impl_linux-64-2.4 | 710 KB    | ############################################################################################################################################# | 100% 
+ca-certificates-2025 | 126 KB    | ############################################################################################################################################# | 100% 
+libstdcxx-ng-11.2.0  | 4.7 MB    | ############################################################################################################################################# | 100% 
+libxcb-1.17.0        | 430 KB    | ############################################################################################################################################# | 100% 
+pthread-stubs-0.3    | 5 KB      | ############################################################################################################################################# | 100% 
+libffi-3.4.4         | 141 KB    | ############################################################################################################################################# | 100% 
+readline-8.3         | 471 KB    | ############################################################################################################################################# | 100% 
+xorg-libxdmcp-1.1.5  | 19 KB     | ############################################################################################################################################# | 100% 
+ncurses-6.5          | 1.1 MB    | ############################################################################################################################################# | 100% 
+openssl-1.1.1w       | 3.7 MB    | ############################################################################################################################################# | 100% 
+tk-8.6.15            | 3.4 MB    | ############################################################################################################################################# | 100% 
+libgomp-11.2.0       | 474 KB    | ############################################################################################################################################# | 100% 
+xorg-xorgproto-2024. | 580 KB    | ############################################################################################################################################# | 100% 
+xorg-libx11-1.8.12   | 895 KB    | ############################################################################################################################################# | 100% 
+wheel-0.38.4         | 63 KB     | ############################################################################################################################################# | 100% 
+libgcc-ng-11.2.0     | 5.3 MB    | ############################################################################################################################################# | 100% 
+zlib-1.2.13          | 111 KB    | ############################################################################################################################################# | 100% 
+certifi-2022.12.7    | 150 KB    | ############################################################################################################################################# | 100% 
+python-3.7.16        | 44.8 MB   | ############################################################################################################################################# | 100% 
+pip-22.3.1           | 2.7 MB    | ############################################################################################################################################# | 100% 
+xz-5.6.4             | 567 KB    | ############################################################################################################################################# | 100% 
+_openmp_mutex-5.1    | 21 KB     | ############################################################################################################################################# | 100% 
+xorg-libxau-1.0.12   | 13 KB     | ############################################################################################################################################# | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate alphapose
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) cloudtenants@cloudtenants-Z790-EAGLE:~$ conda activate alphapose
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ pip install "setuptools<60" "pip<22" "cython==0.29.32" "numpy<1.22"
+Collecting setuptools<60
+  Downloading setuptools-59.8.0-py3-none-any.whl (952 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 952.8/952.8 kB 7.9 MB/s eta 0:00:00
+Collecting pip<22
+  Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 10.1 MB/s eta 0:00:00
+Collecting cython==0.29.32
+  Downloading Cython-0.29.32-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (1.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 6.0 MB/s eta 0:00:00
+Collecting numpy<1.22
+  Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 10.6 MB/s eta 0:00:00
+Installing collected packages: setuptools, pip, numpy, cython
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 65.6.3
+    Uninstalling setuptools-65.6.3:
+      Successfully uninstalled setuptools-65.6.3
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3.1
+    Uninstalling pip-22.3.1:
+      Successfully uninstalled pip-22.3.1
+Successfully installed cython-0.29.32 numpy-1.21.6 pip-21.3.1 setuptools-59.8.0
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu117
+Collecting torch==1.13.1
+  Downloading https://download.pytorch.org/whl/cu117/torch-1.13.1%2Bcu117-cp37-cp37m-linux_x86_64.whl (1801.9 MB)
+     |████████████████████████████████| 1801.9 MB 39 kB/s               
+Collecting torchvision==0.14.1
+  Downloading https://download.pytorch.org/whl/cu117/torchvision-0.14.1%2Bcu117-cp37-cp37m-linux_x86_64.whl (24.3 MB)
+     |████████████████████████████████| 24.3 MB 2.2 MB/s            
+Collecting torchaudio==0.13.1
+  Downloading https://download.pytorch.org/whl/cu117/torchaudio-0.13.1%2Bcu117-cp37-cp37m-linux_x86_64.whl (4.2 MB)
+     |████████████████████████████████| 4.2 MB 1.4 MB/s            
+Collecting typing-extensions
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Collecting pillow!=8.3.*,>=5.3.0
+  Downloading Pillow-9.5.0-cp37-cp37m-manylinux_2_28_x86_64.whl (3.4 MB)
+     |████████████████████████████████| 3.4 MB 4.0 MB/s            
+Collecting requests
+  Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+     |████████████████████████████████| 62 kB 726 kB/s             
+Requirement already satisfied: numpy in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from torchvision==0.14.1) (1.21.6)
+Collecting idna<4,>=2.5
+  Downloading idna-3.10-py3-none-any.whl (70 kB)
+     |████████████████████████████████| 70 kB 4.0 MB/s             
+Collecting charset-normalizer<4,>=2
+  Downloading charset_normalizer-3.4.3-py3-none-any.whl (53 kB)
+     |████████████████████████████████| 53 kB 964 kB/s             
+Requirement already satisfied: certifi>=2017.4.17 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from requests->torchvision==0.14.1) (2022.12.7)
+Collecting urllib3<3,>=1.21.1
+  Downloading urllib3-2.0.7-py3-none-any.whl (124 kB)
+     |████████████████████████████████| 124 kB 11.0 MB/s            
+Collecting typing-extensions
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.9.0-py3-none-any.whl (32 kB)
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.8.0-py3-none-any.whl (31 kB)
+  Downloading typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Installing collected packages: urllib3, typing-extensions, idna, charset-normalizer, torch, requests, pillow, torchvision, torchaudio
+Successfully installed charset-normalizer-3.4.3 idna-3.10 pillow-9.5.0 requests-2.31.0 torch-1.13.1+cu117 torchaudio-0.13.1+cu117 torchvision-0.14.1+cu117 typing-extensions-4.7.1 urllib3-2.0.7
+WARNING: You are using pip version 21.3.1; however, version 24.0 is available.
+You should consider upgrading via the '/home/cloudtenants/miniconda/envs/alphapose/bin/python -m pip install --upgrade pip' command.
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ sudo apt-get update
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease          
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble InRelease                 
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists... Done
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ sudo apt-get install -y libyaml-dev
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  libyaml-doc
+The following NEW packages will be installed:
+  libyaml-dev
+0 upgraded, 1 newly installed, 0 to remove and 9 not upgraded.
+Need to get 62.2 kB of archives.
+After this operation, 255 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libyaml-dev amd64 0.2.5-1build1 [62.2 kB]
+Fetched 62.2 kB in 1s (49.2 kB/s)      
+Selecting previously unselected package libyaml-dev:amd64.
+(Reading database ... 214252 files and directories currently installed.)
+Preparing to unpack .../libyaml-dev_0.2.5-1build1_amd64.deb ...
+Unpacking libyaml-dev:amd64 (0.2.5-1build1) ...
+Setting up libyaml-dev:amd64 (0.2.5-1build1) ...
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ pip install ninja six tqdm scipy pycocotools tensorboardX yacs natsort "timm==0.1.20" munkres halpecocotools gdown
+Collecting ninja
+  Downloading ninja-1.11.1.4-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (422 kB)
+     |████████████████████████████████| 422 kB 3.7 MB/s            
+Collecting six
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting tqdm
+  Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+     |████████████████████████████████| 78 kB 6.7 MB/s             
+Collecting scipy
+  Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+     |████████████████████████████████| 38.1 MB 10.5 MB/s            
+Collecting pycocotools
+  Downloading pycocotools-2.0.7-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (403 kB)
+     |████████████████████████████████| 403 kB 11.9 MB/s            
+Collecting tensorboardX
+  Downloading tensorboardX-2.6.2.2-py2.py3-none-any.whl (101 kB)
+     |████████████████████████████████| 101 kB 6.9 MB/s            
+Collecting yacs
+  Downloading yacs-0.1.8-py3-none-any.whl (14 kB)
+Collecting natsort
+  Downloading natsort-8.4.0-py3-none-any.whl (38 kB)
+Collecting timm==0.1.20
+  Downloading timm-0.1.20-py3-none-any.whl (161 kB)
+     |████████████████████████████████| 161 kB 12.3 MB/s            
+Collecting munkres
+  Downloading munkres-1.1.4-py2.py3-none-any.whl (7.0 kB)
+Collecting halpecocotools
+  Downloading halpecocotools-0.0.1.tar.gz (141 kB)
+     |████████████████████████████████| 141 kB 11.7 MB/s            
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting gdown
+  Downloading gdown-4.7.3-py3-none-any.whl (16 kB)
+Requirement already satisfied: torch>=1.0 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from timm==0.1.20) (1.13.1+cu117)
+Requirement already satisfied: torchvision in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from timm==0.1.20) (0.14.1+cu117)
+Requirement already satisfied: numpy<1.23.0,>=1.16.5 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from scipy) (1.21.6)
+Collecting matplotlib>=2.1.0
+  Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+     |████████████████████████████████| 11.2 MB 10.5 MB/s            
+Collecting protobuf>=3.20
+  Downloading protobuf-4.24.4-cp37-abi3-manylinux2014_x86_64.whl (311 kB)
+     |████████████████████████████████| 311 kB 10.8 MB/s            
+Collecting packaging
+  Downloading packaging-24.0-py3-none-any.whl (53 kB)
+     |████████████████████████████████| 53 kB 2.9 MB/s             
+Collecting PyYAML
+  Downloading PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
+     |████████████████████████████████| 670 kB 10.1 MB/s            
+Requirement already satisfied: cython>=0.27.3 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from halpecocotools) (0.29.32)
+Requirement already satisfied: setuptools>=18.0 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from halpecocotools) (59.8.0)
+Requirement already satisfied: requests[socks] in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from gdown) (2.31.0)
+Collecting beautifulsoup4
+  Downloading beautifulsoup4-4.13.5-py3-none-any.whl (105 kB)
+     |████████████████████████████████| 105 kB 10.3 MB/s            
+Collecting filelock
+  Downloading filelock-3.12.2-py3-none-any.whl (10 kB)
+Collecting python-dateutil>=2.7
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+     |████████████████████████████████| 229 kB 11.1 MB/s            
+Requirement already satisfied: pillow>=6.2.0 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from matplotlib>=2.1.0->pycocotools) (9.5.0)
+Collecting pyparsing>=2.2.1
+  Downloading pyparsing-3.1.4-py3-none-any.whl (104 kB)
+     |████████████████████████████████| 104 kB 10.9 MB/s            
+Collecting kiwisolver>=1.0.1
+  Downloading kiwisolver-1.4.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+     |████████████████████████████████| 1.1 MB 10.4 MB/s            
+Collecting cycler>=0.10
+  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+Collecting fonttools>=4.22.0
+  Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
+     |████████████████████████████████| 965 kB 8.1 MB/s            
+Requirement already satisfied: typing-extensions in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from torch>=1.0->timm==0.1.20) (4.7.1)
+Collecting soupsieve>1.2
+  Downloading soupsieve-2.4.1-py3-none-any.whl (36 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from requests[socks]->gdown) (3.4.3)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from requests[socks]->gdown) (2.0.7)
+Requirement already satisfied: idna<4,>=2.5 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from requests[socks]->gdown) (3.10)
+Requirement already satisfied: certifi>=2017.4.17 in ./miniconda/envs/alphapose/lib/python3.7/site-packages (from requests[socks]->gdown) (2022.12.7)
+Collecting PySocks!=1.5.7,>=1.5.6
+  Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)
+Building wheels for collected packages: halpecocotools
+  Building wheel for halpecocotools (pyproject.toml) ... done
+  Created wheel for halpecocotools: filename=halpecocotools-0.0.1-cp37-cp37m-linux_x86_64.whl size=539902 sha256=84f607b9bf025dc242064e688ca261d4c7d4c84f1dd9c7af448a8eeb820ec507
+  Stored in directory: /home/cloudtenants/.cache/pip/wheels/a8/e5/16/827e6906e218159fb994d4db02d545fb8cf2c2fbdbc5b6d552
+Successfully built halpecocotools
+Installing collected packages: six, soupsieve, python-dateutil, PySocks, pyparsing, packaging, kiwisolver, fonttools, cycler, tqdm, PyYAML, protobuf, matplotlib, filelock, beautifulsoup4, yacs, timm, tensorboardX, scipy, pycocotools, ninja, natsort, munkres, halpecocotools, gdown
+Successfully installed PySocks-1.7.1 PyYAML-6.0.1 beautifulsoup4-4.13.5 cycler-0.11.0 filelock-3.12.2 fonttools-4.38.0 gdown-4.7.3 halpecocotools-0.0.1 kiwisolver-1.4.5 matplotlib-3.5.3 munkres-1.1.4 natsort-8.4.0 ninja-1.11.1.4 packaging-24.0 protobuf-4.24.4 pycocotools-2.0.7 pyparsing-3.1.4 python-dateutil-2.9.0.post0 scipy-1.7.3 six-1.17.0 soupsieve-2.4.1 tensorboardX-2.6.2.2 timm-0.1.20 tqdm-4.67.1 yacs-0.1.8
+WARNING: You are using pip version 21.3.1; however, version 24.0 is available.
+You should consider upgrading via the '/home/cloudtenants/miniconda/envs/alphapose/bin/python -m pip install --upgrade pip' command.
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ export CUDA_HOME=/usr/local/cuda-11.7
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ export PATH=/usr/local/cuda-11.7/bin:$PATH
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Wed_Jun__8_16:49:14_PDT_2022
+Cuda compilation tools, release 11.7, V11.7.99
+Build cuda_11.7.r11.7/compiler.31442593_0
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ git clone https://github.com/MVIG-SJTU/AlphaPose.git
+Cloning into 'AlphaPose'...
+remote: Enumerating objects: 2749, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 2749 (delta 4), reused 0 (delta 0), pack-reused 2740 (from 2)
+Receiving objects: 100% (2749/2749), 118.82 MiB | 8.42 MiB/s, done.
+Resolving deltas: 100% (1379/1379), done.
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~$ cd AlphaPose/
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ python setup.py build develop
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/installer.py:30: SetuptoolsDeprecationWarning: setuptools.installer is deprecated. Requirements should be satisfied by a PEP 517 installer.
+  SetuptoolsDeprecationWarning,
+running build
+running build_py
+creating build
+creating build/lib.linux-x86_64-3.7
+creating build/lib.linux-x86_64-3.7/trackers
+copying trackers/tracker_api.py -> build/lib.linux-x86_64-3.7/trackers
+copying trackers/__init__.py -> build/lib.linux-x86_64-3.7/trackers
+copying trackers/tracker_cfg.py -> build/lib.linux-x86_64-3.7/trackers
+creating build/lib.linux-x86_64-3.7/alphapose
+copying alphapose/version.py -> build/lib.linux-x86_64-3.7/alphapose
+copying alphapose/opt.py -> build/lib.linux-x86_64-3.7/alphapose
+copying alphapose/__init__.py -> build/lib.linux-x86_64-3.7/alphapose
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/osnet_ain.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/bn_linear.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/ResBnLin.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/osnet.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/ResNet.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/resnet_fc.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+copying trackers/ReidModels/net_utils.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels
+creating build/lib.linux-x86_64-3.7/trackers/tracking
+copying trackers/tracking/matching.py -> build/lib.linux-x86_64-3.7/trackers/tracking
+copying trackers/tracking/basetrack.py -> build/lib.linux-x86_64-3.7/trackers/tracking
+copying trackers/tracking/__init__.py -> build/lib.linux-x86_64-3.7/trackers/tracking
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/classification
+copying trackers/ReidModels/classification/classifier.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/classification
+copying trackers/ReidModels/classification/rfcn_cls.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/classification
+copying trackers/ReidModels/classification/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/classification
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling
+copying trackers/ReidModels/psroi_pooling/build.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling
+copying trackers/ReidModels/psroi_pooling/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/reid
+copying trackers/ReidModels/reid/image_part_aligned.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/reid
+copying trackers/ReidModels/reid/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/reid
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/backbone
+copying trackers/ReidModels/backbone/sqeezenet.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/backbone
+copying trackers/ReidModels/backbone/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/backbone
+copying trackers/ReidModels/backbone/googlenet.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/backbone
+copying trackers/ReidModels/backbone/lrn.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/backbone
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/functions
+copying trackers/ReidModels/psroi_pooling/functions/psroi_pooling.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/functions
+copying trackers/ReidModels/psroi_pooling/functions/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/functions
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/modules
+copying trackers/ReidModels/psroi_pooling/modules/psroi_pool.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/modules
+copying trackers/ReidModels/psroi_pooling/modules/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/modules
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/_ext
+copying trackers/ReidModels/psroi_pooling/_ext/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/_ext
+creating build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/_ext/psroi_pooling
+copying trackers/ReidModels/psroi_pooling/_ext/psroi_pooling/__init__.py -> build/lib.linux-x86_64-3.7/trackers/ReidModels/psroi_pooling/_ext/psroi_pooling
+creating build/lib.linux-x86_64-3.7/trackers/tracking/utils
+copying trackers/tracking/utils/io.py -> build/lib.linux-x86_64-3.7/trackers/tracking/utils
+copying trackers/tracking/utils/timer.py -> build/lib.linux-x86_64-3.7/trackers/tracking/utils
+copying trackers/tracking/utils/parse_config.py -> build/lib.linux-x86_64-3.7/trackers/tracking/utils
+copying trackers/tracking/utils/kalman_filter.py -> build/lib.linux-x86_64-3.7/trackers/tracking/utils
+copying trackers/tracking/utils/utils.py -> build/lib.linux-x86_64-3.7/trackers/tracking/utils
+copying trackers/tracking/utils/__init__.py -> build/lib.linux-x86_64-3.7/trackers/tracking/utils
+copying trackers/tracking/utils/nms.py -> build/lib.linux-x86_64-3.7/trackers/tracking/utils
+creating build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_26_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/custom.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/coco_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/coco_wholebody_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/mpii.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/mscoco.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_coco_wholebody_26.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/single_hand_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/single_hand.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/concat_dataset.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_26.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_coco_wholebody_136.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_136.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_136_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_68_noface.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/coco_wholebody.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_coco_wholebody_136_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_coco_wholebody_26_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/__init__.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+copying alphapose/datasets/halpe_68_noface_det.py -> build/lib.linux-x86_64-3.7/alphapose/datasets
+creating build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/file_detector.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/vis.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/render_pytorch3d.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/registry.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/bbox.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/pPose_nms.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/logger.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/env.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/writer.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/config.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/transforms.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/metrics.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/__init__.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/writer_smpl.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/webcam_detector.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+copying alphapose/utils/detector.py -> build/lib.linux-x86_64-3.7/alphapose/utils
+creating build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/fastpose_duc_dense.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/fastpose_duc.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/simplepose.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/builder.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/hrnet.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/hardnet.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/criterion.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/simple3dposeSMPLWithCam.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/fastpose.py -> build/lib.linux-x86_64-3.7/alphapose/models
+copying alphapose/models/__init__.py -> build/lib.linux-x86_64-3.7/alphapose/models
+creating build/lib.linux-x86_64-3.7/alphapose/utils/roi_align
+copying alphapose/utils/roi_align/roi_align.py -> build/lib.linux-x86_64-3.7/alphapose/utils/roi_align
+copying alphapose/utils/roi_align/__init__.py -> build/lib.linux-x86_64-3.7/alphapose/utils/roi_align
+creating build/lib.linux-x86_64-3.7/alphapose/utils/presets
+copying alphapose/utils/presets/simple_transform_3d_smpl.py -> build/lib.linux-x86_64-3.7/alphapose/utils/presets
+copying alphapose/utils/presets/simple_transform.py -> build/lib.linux-x86_64-3.7/alphapose/utils/presets
+copying alphapose/utils/presets/__init__.py -> build/lib.linux-x86_64-3.7/alphapose/utils/presets
+running build_ext
+Traceback (most recent call last):
+  File "setup.py", line 214, in <module>
+    zip_safe=False)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/distutils/command/build.py", line 135, in run
+    self.run_command(cmd_name)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/distutils/cmd.py", line 313, in run_command
+    self.distribution.run_command(command)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/command/build_ext.py", line 79, in run
+    _build_ext.run(self)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/Cython/Distutils/old_build_ext.py", line 186, in run
+    _build_ext.build_ext.run(self)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/distutils/command/build_ext.py", line 340, in run
+    self.build_extensions()
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/utils/cpp_extension.py", line 499, in build_extensions
+    _check_cuda_version(compiler_name, compiler_version)
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/utils/cpp_extension.py", line 417, in _check_cuda_version
+    f'The current installed version of {compiler_name} ({compiler_version}) is greater '
+RuntimeError: The current installed version of g++ (13.3.0) is greater than the maximum required version by CUDA 11.7 (11.5.0). Please make sure to use an adequate version of g++ (>=6.0.0, <=11.5.0).
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ 
+

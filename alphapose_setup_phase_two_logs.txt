@@ -1,0 +1,745 @@
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ sudo apt-get install gcc-11 g++-11 -y
+[sudo] password for cloudtenants: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  cpp-11 gcc-11-base libasan6 libgcc-11-dev libstdc++-11-dev libtsan0
+Suggested packages:
+  gcc-11-locales g++-11-multilib gcc-11-doc gcc-11-multilib libstdc++-11-doc
+The following NEW packages will be installed:
+  cpp-11 g++-11 gcc-11 gcc-11-base libasan6 libgcc-11-dev libstdc++-11-dev libtsan0
+0 upgraded, 8 newly installed, 0 to remove and 9 not upgraded.
+Need to get 50.7 MB of archives.
+After this operation, 160 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gcc-11-base amd64 11.5.0-1ubuntu1~24.04 [45.4 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 cpp-11 amd64 11.5.0-1ubuntu1~24.04 [10.0 MB]
+Get:3 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libasan6 amd64 11.5.0-1ubuntu1~24.04 [2,285 kB]                                                                 
+Get:4 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libtsan0 amd64 11.5.0-1ubuntu1~24.04 [2,268 kB]                                                                 
+Get:5 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libgcc-11-dev amd64 11.5.0-1ubuntu1~24.04 [2,481 kB]                                                            
+Get:6 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gcc-11 amd64 11.5.0-1ubuntu1~24.04 [20.1 MB]                                                                    
+Get:7 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libstdc++-11-dev amd64 11.5.0-1ubuntu1~24.04 [2,094 kB]                                                         
+Get:8 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 g++-11 amd64 11.5.0-1ubuntu1~24.04 [11.4 MB]                                                                    
+Fetched 50.7 MB in 3min 23s (250 kB/s)                                                                                                                                                 
+Selecting previously unselected package gcc-11-base:amd64.
+(Reading database ... 214259 files and directories currently installed.)
+Preparing to unpack .../0-gcc-11-base_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking gcc-11-base:amd64 (11.5.0-1ubuntu1~24.04) ...
+Selecting previously unselected package cpp-11.
+Preparing to unpack .../1-cpp-11_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking cpp-11 (11.5.0-1ubuntu1~24.04) ...
+Selecting previously unselected package libasan6:amd64.
+Preparing to unpack .../2-libasan6_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking libasan6:amd64 (11.5.0-1ubuntu1~24.04) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../3-libtsan0_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking libtsan0:amd64 (11.5.0-1ubuntu1~24.04) ...
+Selecting previously unselected package libgcc-11-dev:amd64.
+Preparing to unpack .../4-libgcc-11-dev_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking libgcc-11-dev:amd64 (11.5.0-1ubuntu1~24.04) ...
+Selecting previously unselected package gcc-11.
+Preparing to unpack .../5-gcc-11_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking gcc-11 (11.5.0-1ubuntu1~24.04) ...
+Selecting previously unselected package libstdc++-11-dev:amd64.
+Preparing to unpack .../6-libstdc++-11-dev_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking libstdc++-11-dev:amd64 (11.5.0-1ubuntu1~24.04) ...
+Selecting previously unselected package g++-11.
+Preparing to unpack .../7-g++-11_11.5.0-1ubuntu1~24.04_amd64.deb ...
+Unpacking g++-11 (11.5.0-1ubuntu1~24.04) ...
+Setting up gcc-11-base:amd64 (11.5.0-1ubuntu1~24.04) ...
+Setting up libasan6:amd64 (11.5.0-1ubuntu1~24.04) ...
+Setting up libtsan0:amd64 (11.5.0-1ubuntu1~24.04) ...
+Setting up cpp-11 (11.5.0-1ubuntu1~24.04) ...
+Setting up libgcc-11-dev:amd64 (11.5.0-1ubuntu1~24.04) ...
+Setting up gcc-11 (11.5.0-1ubuntu1~24.04) ...
+Setting up libstdc++-11-dev:amd64 (11.5.0-1ubuntu1~24.04) ...
+Setting up g++-11 (11.5.0-1ubuntu1~24.04) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.5) ...
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ conda env config vars set CC=/usr/bin/gcc-11 CXX=/usr/bin/g++-11
+To make your changes take effect please reactivate your environment
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ conda deactivate
+(base) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ conda activate alphapose
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ python setup.py build develop
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/installer.py:30: SetuptoolsDeprecationWarning: setuptools.installer is deprecated. Requirements should be satisfied by a PEP 517 installer.
+  SetuptoolsDeprecationWarning,
+running build
+running build_py
+copying alphapose/version.py -> build/lib.linux-x86_64-3.7/alphapose
+running build_ext
+building 'detector.nms.soft_nms_cpu' extension
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/1] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/soft_nms_cpu.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/soft_nms_cpu.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/soft_nms_cpu.o -Wno-unused-function -Wno-write-strings -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=soft_nms_cpu -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1969,
+                 from /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /home/cloudtenants/AlphaPose/detector/nms/src/soft_nms_cpu.cpp:741:
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+   17 | #warning "Using deprecated NumPy API, disable it with " \
+      |  ^~~~~~~
+creating build/lib.linux-x86_64-3.7/detector
+creating build/lib.linux-x86_64-3.7/detector/nms
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/soft_nms_cpu.o -o build/lib.linux-x86_64-3.7/detector/nms/soft_nms_cpu.cpython-37m-x86_64-linux-gnu.so
+building 'detector.nms.nms_cpu' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/1] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cpu.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/nms_cpu.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cpu.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cpu -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cpu.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/detector/nms/nms_cpu.cpython-37m-x86_64-linux-gnu.so
+building 'detector.nms.nms_cuda' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/nms_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/nms_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/detector/nms/nms_cuda.cpython-37m-x86_64-linux-gnu.so
+building 'alphapose.utils.roi_align.roi_align_cuda' extension
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/utils/roi_align/src/roi_align_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=roi_align_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/utils/roi_align/src/roi_align_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=roi_align_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/alphapose/utils/roi_align/roi_align_cuda.cpython-37m-x86_64-linux-gnu.so
+building 'alphapose.models.layers.dcn.deform_conv_cuda' extension
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn
+creating /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_conv_cuda_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_conv_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_conv_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_conv_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+creating build/lib.linux-x86_64-3.7/alphapose/models/layers
+creating build/lib.linux-x86_64-3.7/alphapose/models/layers/dcn
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/alphapose/models/layers/dcn/deform_conv_cuda.cpython-37m-x86_64-linux-gnu.so
+building 'alphapose.models.layers.dcn.deform_pool_cuda' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_pool_cuda_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_pool_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_pool_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_pool_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/alphapose/models/layers/dcn/deform_pool_cuda.cpython-37m-x86_64-linux-gnu.so
+running develop
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/command/easy_install.py:159: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  EasyInstallDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/command/install.py:37: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  setuptools.SetuptoolsDeprecationWarning,
+running egg_info
+creating alphapose.egg-info
+writing alphapose.egg-info/PKG-INFO
+writing dependency_links to alphapose.egg-info/dependency_links.txt
+writing requirements to alphapose.egg-info/requires.txt
+writing top-level names to alphapose.egg-info/top_level.txt
+writing manifest file 'alphapose.egg-info/SOURCES.txt'
+reading manifest file 'alphapose.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'alphapose.egg-info/SOURCES.txt'
+running build_ext
+building 'detector.nms.soft_nms_cpu' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/1] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/soft_nms_cpu.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/soft_nms_cpu.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/soft_nms_cpu.o -Wno-unused-function -Wno-write-strings -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=soft_nms_cpu -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=soft_nms_cpu -D_GLIBCXX_USE_CXX11_ABI=0
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1969,
+                 from /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /home/cloudtenants/AlphaPose/detector/nms/src/soft_nms_cpu.cpp:741:
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+   17 | #warning "Using deprecated NumPy API, disable it with " \
+      |  ^~~~~~~
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/soft_nms_cpu.o -o build/lib.linux-x86_64-3.7/detector/nms/soft_nms_cpu.cpython-37m-x86_64-linux-gnu.so
+building 'detector.nms.nms_cpu' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/1] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cpu.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/nms_cpu.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cpu.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cpu -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cpu -D_GLIBCXX_USE_CXX11_ABI=0
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cpu.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/detector/nms/nms_cpu.cpython-37m-x86_64-linux-gnu.so
+building 'detector.nms.nms_cuda' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/nms_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/detector/nms/src/nms_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=nms_cuda -D_GLIBCXX_USE_CXX11_ABI=0
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/detector/nms/src/nms_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/detector/nms/nms_cuda.cpython-37m-x86_64-linux-gnu.so
+building 'alphapose.utils.roi_align.roi_align_cuda' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/utils/roi_align/src/roi_align_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=roi_align_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=roi_align_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/utils/roi_align/src/roi_align_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=roi_align_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=roi_align_cuda -D_GLIBCXX_USE_CXX11_ABI=0
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/utils/roi_align/src/roi_align_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/alphapose/utils/roi_align/roi_align_cuda.cpython-37m-x86_64-linux-gnu.so
+building 'alphapose.models.layers.dcn.deform_conv_cuda' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_conv_cuda_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_conv_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_conv_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_conv_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_conv_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_conv_cuda -D_GLIBCXX_USE_CXX11_ABI=0
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_conv_cuda_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/alphapose/models/layers/dcn/deform_conv_cuda.cpython-37m-x86_64-linux-gnu.so
+building 'alphapose.models.layers.dcn.deform_pool_cuda' extension
+Emitting ninja build file /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /usr/local/cuda-11.7/bin/nvcc  -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_pool_cuda_kernel.cu -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_pool_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_pool_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 -ccbin /usr/bin/gcc-11 -std=c++14
+[2/2] /usr/bin/g++-11 -MMD -MF /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda.o.d -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/TH -I/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/include/THC -I/usr/local/cuda-11.7/include -I/home/cloudtenants/miniconda/envs/alphapose/include/python3.7m -c -c /home/cloudtenants/AlphaPose/alphapose/models/layers/dcn/src/deform_pool_cuda.cpp -o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_pool_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=deform_pool_cuda -D_GLIBCXX_USE_CXX11_ABI=0
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/usr/bin/g++-11 -pthread -shared -B /home/cloudtenants/miniconda/envs/alphapose/compiler_compat -L/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,-rpath=/home/cloudtenants/miniconda/envs/alphapose/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda.o /home/cloudtenants/AlphaPose/build/temp.linux-x86_64-3.7/alphapose/models/layers/dcn/src/deform_pool_cuda_kernel.o -L/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/torch/lib -L/usr/local/cuda-11.7/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda_cu -ltorch_cuda_cpp -o build/lib.linux-x86_64-3.7/alphapose/models/layers/dcn/deform_pool_cuda.cpython-37m-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-3.7/detector/nms/soft_nms_cpu.cpython-37m-x86_64-linux-gnu.so -> detector/nms
+copying build/lib.linux-x86_64-3.7/detector/nms/nms_cpu.cpython-37m-x86_64-linux-gnu.so -> detector/nms
+copying build/lib.linux-x86_64-3.7/detector/nms/nms_cuda.cpython-37m-x86_64-linux-gnu.so -> detector/nms
+copying build/lib.linux-x86_64-3.7/alphapose/utils/roi_align/roi_align_cuda.cpython-37m-x86_64-linux-gnu.so -> alphapose/utils/roi_align
+copying build/lib.linux-x86_64-3.7/alphapose/models/layers/dcn/deform_conv_cuda.cpython-37m-x86_64-linux-gnu.so -> alphapose/models/layers/dcn
+copying build/lib.linux-x86_64-3.7/alphapose/models/layers/dcn/deform_pool_cuda.cpython-37m-x86_64-linux-gnu.so -> alphapose/models/layers/dcn
+Creating /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/alphapose.egg-link (link to .)
+Adding alphapose 0.5.0+c60106d to easy-install.pth file
+
+Installed /home/cloudtenants/AlphaPose
+Processing dependencies for alphapose==0.5.0+c60106d
+Searching for easydict
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/easydict/
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning:  is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/05/ec/fa6963f1198172c2b75c9ab6ecefb3045991f92f75f5eb41b6621b198123/easydict-1.13-py3-none-any.whl#sha256=6b787daf4dcaf6377b4ad9403a5cee5a86adbc0ca9a5bcf5410e9902002aeac2
+Best match: easydict 1.13
+Processing easydict-1.13-py3-none-any.whl
+Installing easydict-1.13-py3-none-any.whl to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding easydict 1.13 to easy-install.pth file
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/easydict-1.13-py3.7.egg
+Searching for visdom
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/visdom/
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/31/ab/6a8df57477ea6bb65b828f0b6725255982dfcd02f7ed353b895393616875/visdom-0.2.4.tar.gz#sha256=84a911d3c8814a056d54812b381bd938cb44bcfc503a85fe0f701502bb720574
+Best match: visdom 0.2.4
+Processing visdom-0.2.4.tar.gz
+Writing /tmp/easy_install-jkoipgmm/visdom-0.2.4/setup.cfg
+Running visdom-0.2.4/setup.py -q bdist_egg --dist-dir /tmp/easy_install-jkoipgmm/visdom-0.2.4/egg-dist-tmp-en9b84lc
+warning: manifest_maker: MANIFEST.in, line 5: 'recursive-include' expects <dir> <pattern1> <pattern2> ...
+
+warning: no previously-included files matching '__pycache__' found under directory '*'
+warning: no previously-included files matching '*.py[co]' found under directory '*'
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/command/install.py:37: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  setuptools.SetuptoolsDeprecationWarning,
+creating /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/visdom-0.2.4-py3.7.egg
+Extracting visdom-0.2.4-py3.7.egg to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding visdom 0.2.4 to easy-install.pth file
+Installing visdom script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/visdom-0.2.4-py3.7.egg
+Searching for opencv-python
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.0.14 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning:  is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.10.37 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.11.39 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.11.41 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.11.43 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.11.45 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.13.47 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.15.55 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.16.57 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.16.59 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.17.61 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.17.63 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-3.4.18.65 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.10.0.82 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.10.0.84 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.11.0.86 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.12.0.88 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.3.0.38 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.4.0.40 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.4.0.42 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.4.0.44 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.4.0.46 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.5.1.48 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.5.3.56 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.5.4.58 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.5.4.60 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.5.5.62 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.5.5.64 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.6.0.66 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.7.0.68 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.7.0.72 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.8.0.74 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.8.0.76 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.8.1.78 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: python-4.9.0.80 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/68/1f/795e7f4aa2eacc59afa4fb61a2e35e510d06414dd5a802b51a012d691b37/opencv_python-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl#sha256=092c16da4c5a163a818f120c22c5e4a2f96e0db4f24e659c701f1fe629a690f9
+Best match: opencv-python 4.12.0.88
+Processing opencv_python-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+Installing opencv_python-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding opencv-python 4.12.0.88 to easy-install.pth file
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/opencv_python-4.12.0.88-py3.7-linux-x86_64.egg
+Searching for terminaltables
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/terminaltables/
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c4/fb/ea621e0a19733e01fe4005d46087d383693c0f4a8f824b47d8d4122c87e0/terminaltables-3.1.10-py2.py3-none-any.whl#sha256=e4fdc4179c9e4aab5f674d80f09d76fa436b96fdc698a8505e0a36bf0804a874
+Best match: terminaltables 3.1.10
+Processing terminaltables-3.1.10-py2.py3-none-any.whl
+Installing terminaltables-3.1.10-py2.py3-none-any.whl to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding terminaltables 3.1.10 to easy-install.pth file
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/terminaltables-3.1.10-py3.7.egg
+Searching for networkx
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/networkx/
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/eb/8d/776adee7bbf76365fdd7f2552710282c79a4ead5d2a46408c9043a2b70ba/networkx-3.5-py3-none-any.whl#sha256=0030d386a9a06dee3565298b4a734b68589749a544acbb6c412dc9e2489ec6ec
+Best match: networkx 3.5
+Processing networkx-3.5-py3-none-any.whl
+Installing networkx-3.5-py3-none-any.whl to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding networkx 3.5 to easy-install.pth file
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/networkx-3.5-py3.7.egg
+Searching for websocket-client
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/websocket-client/
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.10.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.11.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.12.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.13.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.14.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.14.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.15.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.16.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.16.0a is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.17.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.18.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.19.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.20.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.21.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.22.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.23.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.24.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.25.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.3 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.4.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.4 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.5.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.5.0a is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.5.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.59.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.6.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.7.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.8.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-0.9.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.0.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.0.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.1.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.1.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.2.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.2.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.2.2 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.2.3 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.3.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.3.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.3.2 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.3.3 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.4.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.4.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.4.2 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.5.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.5.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.5.2 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.5.3 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.6.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.6.1 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.6.2 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.6.3 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.6.4 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: client-1.7.0 is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5a/84/44687a29792a70e111c5c477230a72c4b957d88d16141199bf9acb7537a3/websocket_client-1.8.0-py3-none-any.whl#sha256=17b44cc997f5c498e809b22cdf2d9c7a9e71c02c8cc2b6c56e7c2d1239bfa526
+Best match: websocket-client 1.8.0
+Processing websocket_client-1.8.0-py3-none-any.whl
+Installing websocket_client-1.8.0-py3-none-any.whl to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding websocket-client 1.8.0 to easy-install.pth file
+Installing wsdump script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/websocket_client-1.8.0-py3.7.egg
+Searching for jsonpatch
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/jsonpatch/
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/73/07/02e16ed01e04a374e644b575638ec7987ae846d25ad97bcc9945a3ee4b0e/jsonpatch-1.33-py2.py3-none-any.whl#sha256=0ae28c0cd062bbd8b8ecc26d7d164fbbea9652a1a3693f3b956c1eae5145dade
+Best match: jsonpatch 1.33
+Processing jsonpatch-1.33-py2.py3-none-any.whl
+Installing jsonpatch-1.33-py2.py3-none-any.whl to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding jsonpatch 1.33 to easy-install.pth file
+Installing jsonpatch script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing jsondiff script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/jsonpatch-1.33-py3.7.egg
+Searching for tornado
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/tornado/
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/09/ce/1eb500eae19f4648281bb2186927bb062d2438c2e5093d1360391afd2f90/tornado-6.5.2.tar.gz#sha256=ab53c8f9a0fa351e2c0741284e06c7a45da86afb544133201c5cc8578eb076a0
+Best match: tornado 6.5.2
+Processing tornado-6.5.2.tar.gz
+Writing /tmp/easy_install-rjxvkmoi/tornado-6.5.2/setup.cfg
+Running tornado-6.5.2/setup.py -q bdist_egg --dist-dir /tmp/easy_install-rjxvkmoi/tornado-6.5.2/egg-dist-tmp-pygttqvx
+no previously-included directories found matching 'docs/build'
+warning: no files found matching 'tornado/test/README'
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/setuptools/command/install.py:37: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  setuptools.SetuptoolsDeprecationWarning,
+  File "build/bdist.linux-x86_64/egg/tornado/test/util_test.py", line 331
+    if m := re.fullmatch(r"(\d+)\.(\d+)\.(\d+)", version):
+          ^
+SyntaxError: invalid syntax
+
+  File "build/bdist.linux-x86_64/egg/tornado/test/httpserver_test.py", line 678
+    closing(IOStream(socket.socket())) as stream,
+                                        ^
+SyntaxError: invalid syntax
+
+  File "build/bdist.linux-x86_64/egg/tornado/httputil.py", line 260
+    if m := re.search(r"\r?\n$", line):
+          ^
+SyntaxError: invalid syntax
+
+zip_safe flag not set; analyzing archive contents...
+tornado.__pycache__.autoreload.cpython-37: module references __file__
+tornado.__pycache__.gen.cpython-37: module references __file__
+tornado.__pycache__.options.cpython-37: module references __file__
+tornado.__pycache__.speedups.cpython-37: module references __file__
+tornado.__pycache__.testing.cpython-37: module references __file__
+tornado.test.__pycache__.gen_test.cpython-37: module references __file__
+tornado.test.__pycache__.iostream_test.cpython-37: module references __file__
+tornado.test.__pycache__.locale_test.cpython-37: module references __file__
+tornado.test.__pycache__.options_test.cpython-37: module references __file__
+tornado.test.__pycache__.template_test.cpython-37: module references __file__
+tornado.test.__pycache__.web_test.cpython-37: module references __file__
+creating /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/tornado-6.5.2-py3.7-linux-x86_64.egg
+Extracting tornado-6.5.2-py3.7-linux-x86_64.egg to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/tornado-6.5.2-py3.7-linux-x86_64.egg/tornado/httputil.py", line 260
+    if m := re.search(r"\r?\n$", line):
+          ^
+SyntaxError: invalid syntax
+
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/tornado-6.5.2-py3.7-linux-x86_64.egg/tornado/test/httpserver_test.py", line 678
+    closing(IOStream(socket.socket())) as stream,
+                                        ^
+SyntaxError: invalid syntax
+
+  File "/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/tornado-6.5.2-py3.7-linux-x86_64.egg/tornado/test/util_test.py", line 331
+    if m := re.fullmatch(r"(\d+)\.(\d+)\.(\d+)", version):
+          ^
+SyntaxError: invalid syntax
+
+Adding tornado 6.5.2 to easy-install.pth file
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/tornado-6.5.2-py3.7-linux-x86_64.egg
+Searching for jsonpointer>=1.9
+Reading https://pypi.tuna.tsinghua.edu.cn/simple/jsonpointer/
+/home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning:  is an invalid version and will not be supported in a future release
+  PkgResourcesDeprecationWarning,
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/71/92/5e77f98553e9e75130c78900d000368476aed74276eb8ae8796f65f00918/jsonpointer-3.0.0-py2.py3-none-any.whl#sha256=13e088adc14fca8b6aa8177c044e12701e6ad4b28ff10e65f2267a90109c9942
+Best match: jsonpointer 3.0.0
+Processing jsonpointer-3.0.0-py2.py3-none-any.whl
+Installing jsonpointer-3.0.0-py2.py3-none-any.whl to /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Adding jsonpointer 3.0.0 to easy-install.pth file
+Installing jsonpointer script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Installed /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages/jsonpointer-3.0.0-py3.7.egg
+Searching for pycocotools==2.0.7
+Best match: pycocotools 2.0.7
+Adding pycocotools 2.0.7 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for natsort==8.4.0
+Best match: natsort 8.4.0
+Adding natsort 8.4.0 to easy-install.pth file
+Installing natsort script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for timm==0.1.20
+Best match: timm 0.1.20
+Adding timm 0.1.20 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for munkres==1.1.4
+Best match: munkres 1.1.4
+Adding munkres 1.1.4 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for torchvision==0.14.1+cu117
+Best match: torchvision 0.14.1+cu117
+Adding torchvision 0.14.1+cu117 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for torch==1.13.1+cu117
+Best match: torch 1.13.1+cu117
+Adding torch 1.13.1+cu117 to easy-install.pth file
+Installing convert-caffe2-to-onnx script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing convert-onnx-to-caffe2 script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing torchrun script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for halpecocotools==0.0.1
+Best match: halpecocotools 0.0.1
+Adding halpecocotools 0.0.1 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for PyYAML==6.0.1
+Best match: PyYAML 6.0.1
+Adding PyYAML 6.0.1 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for tensorboardX==2.6.2.2
+Best match: tensorboardX 2.6.2.2
+Adding tensorboardX 2.6.2.2 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for tqdm==4.67.1
+Best match: tqdm 4.67.1
+Adding tqdm 4.67.1 to easy-install.pth file
+Installing tqdm script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for matplotlib==3.5.3
+Best match: matplotlib 3.5.3
+Adding matplotlib 3.5.3 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for scipy==1.7.3
+Best match: scipy 1.7.3
+Adding scipy 1.7.3 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for six==1.17.0
+Best match: six 1.17.0
+Adding six 1.17.0 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for numpy==1.21.6
+Best match: numpy 1.21.6
+Adding numpy 1.21.6 to easy-install.pth file
+Installing f2py script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing f2py3 script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing f2py3.7 script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for typing-extensions==4.7.1
+Best match: typing-extensions 4.7.1
+Adding typing-extensions 4.7.1 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for Pillow==9.5.0
+Best match: Pillow 9.5.0
+Adding Pillow 9.5.0 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for requests==2.31.0
+Best match: requests 2.31.0
+Adding requests 2.31.0 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for setuptools==59.8.0
+Best match: setuptools 59.8.0
+Adding setuptools 59.8.0 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for Cython==0.29.32
+Best match: Cython 0.29.32
+Adding Cython 0.29.32 to easy-install.pth file
+Installing cygdb script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing cython script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing cythonize script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for packaging==24.0
+Best match: packaging 24.0
+Adding packaging 24.0 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for protobuf==4.24.4
+Best match: protobuf 4.24.4
+Adding protobuf 4.24.4 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for kiwisolver==1.4.5
+Best match: kiwisolver 1.4.5
+Adding kiwisolver 1.4.5 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for pyparsing==3.1.4
+Best match: pyparsing 3.1.4
+Adding pyparsing 3.1.4 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for fonttools==4.38.0
+Best match: fonttools 4.38.0
+Adding fonttools 4.38.0 to easy-install.pth file
+Installing fonttools script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing pyftmerge script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing pyftsubset script to /home/cloudtenants/miniconda/envs/alphapose/bin
+Installing ttx script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for cycler==0.11.0
+Best match: cycler 0.11.0
+Adding cycler 0.11.0 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for python-dateutil==2.9.0.post0
+Best match: python-dateutil 2.9.0.post0
+Adding python-dateutil 2.9.0.post0 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for urllib3==2.0.7
+Best match: urllib3 2.0.7
+Adding urllib3 2.0.7 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for idna==3.10
+Best match: idna 3.10
+Adding idna 3.10 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for certifi==2022.12.7
+Best match: certifi 2022.12.7
+Adding certifi 2022.12.7 to easy-install.pth file
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Searching for charset-normalizer==3.4.3
+Best match: charset-normalizer 3.4.3
+Adding charset-normalizer 3.4.3 to easy-install.pth file
+Installing normalizer script to /home/cloudtenants/miniconda/envs/alphapose/bin
+
+Using /home/cloudtenants/miniconda/envs/alphapose/lib/python3.7/site-packages
+Finished processing dependencies for alphapose==0.5.0+c60106d
+
+Install `cython_bbox`...
+Collecting git+https://github.com/yanfengliu/cython_bbox.git
+  Cloning https://github.com/yanfengliu/cython_bbox.git to /tmp/pip-req-build-e2dpnudu
+  Running command git clone --filter=blob:none -q https://github.com/yanfengliu/cython_bbox.git /tmp/pip-req-build-e2dpnudu
+  Resolved https://github.com/yanfengliu/cython_bbox.git to commit e7b95b6dc0933b10bd0ec02b90755a12ca996c68
+  Preparing metadata (setup.py) ... done
+Building wheels for collected packages: cython-bbox
+  Building wheel for cython-bbox (setup.py) ... done
+  Created wheel for cython-bbox: filename=cython_bbox-0.1.3-cp37-cp37m-linux_x86_64.whl size=66133 sha256=6c34b9f68ad7be4bf4380a9bbcb7b378c49f114b6271b4192f66089262147698
+  Stored in directory: /tmp/pip-ephem-wheel-cache-omv5gt8n/wheels/f1/26/0c/3a5085741b3e3200eea4c5b74f25ee755917faede864ab774b
+Successfully built cython-bbox
+Installing collected packages: cython-bbox
+Successfully installed cython-bbox-0.1.3
+WARNING: You are using pip version 21.3.1; however, version 24.0 is available.
+You should consider upgrading via the '/home/cloudtenants/miniconda/envs/alphapose/bin/python -m pip install --upgrade pip' command.
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ 
+
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ pip install "tornado<6.4"
+Collecting tornado<6.4
+  Downloading tornado-6.2-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (423 kB)
+     |████████████████████████████████| 423 kB 4.0 MB/s            
+Installing collected packages: tornado
+  Attempting uninstall: tornado
+    Found existing installation: tornado 6.5.2
+    Uninstalling tornado-6.5.2:
+      Successfully uninstalled tornado-6.5.2
+Successfully installed tornado-6.2
+WARNING: You are using pip version 21.3.1; however, version 24.0 is available.
+You should consider upgrading via the '/home/cloudtenants/miniconda/envs/alphapose/bin/python -m pip install --upgrade pip' command.
+(alphapose) cloudtenants@cloudtenants-Z790-EAGLE:~/AlphaPose$ 
+

@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# version file
+alphapose/version.py
+
 # Distribution / packaging
 .Python
 build/
